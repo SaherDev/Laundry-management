@@ -1,0 +1,40 @@
+<div class="my-login-page">
+  <br /><br /><br />
+  <h1 align=center style="font-family: 'Fredoka One', cursive; ">ASLAUNDRY</h1>
+  <section class="h-100">
+    <div class="container h-100">
+      <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper">
+          <div class="card fat">
+            <div class="card-body">
+              <h4 style="font-family: 'Fredoka One', cursive;" class="card-title" align="center">
+                התחברות
+              </h4>
+
+              <!-- form -->
+              <form [formGroup]="loginForm" (ngSubmit)="Login()" class="my-login-validation"
+                enctype="multipart/form-data">
+                <!-- email -->
+                <div class="form-group">
+                  <label for="username">שם משתמש</label>
+                  <input class="form-control" type="text" formControlName="username" required autofocus />
+                </div>
+                <!-- pass -->
+                <div class="form-group">
+                  <label for="password">סיסמא</label>
+                  <input class="form-control" type="password" formControlName="password" required data-eye />
+                </div>
+                <!-- submit -->
+                <div class="form-group m-0">
+                  <button type="submit" [disabled]="hideBtnLogin" class="btn btn-primary btn-block">
+                    התחברות
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,112 @@
+<div class="container">
+  <app-nav-menu></app-nav-menu>
+
+  <mat-card id="card" style="text-align: center;">
+    <mat-card-title>
+      <h1>איסוף כביסה</h1>
+    </mat-card-title>
+    <mat-card-content>
+      <div *ngIf="!clients">
+        <h1 style="text-align:center">טוען...</h1>.
+      </div>
+      <div *ngIf="clients" dir="rtl">
+        <mat-form-field>
+          <mat-label class="label">בחר לקוח</mat-label>
+          <mat-select id="clients" *ngIf="clients" [(ngModel)]="order.clientId">
+            <mat-option *ngFor="let client of clients" value={{client.clientId}}>
+              {{client.Name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <hr />
+        <table align="center" style="font:bold 26px arial,verdana;">
+          <tbody>
+            <tr>
+              <td width="50px"><b> שקים </b></td>
+              <td> &nbsp; &nbsp;</td>
+              <td>
+                <input matInput type="number" inputmode="numeric" min="0" class="w-50" [(ngModel)]="bag"
+                  placeholder="כמות">
+              </td>
+              <td><button mat-fab color="success" (click)="incAmount('bag');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">+</button></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><button mat-fab color="fail" (click)="decAmount('bag');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">-</button></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><b> שקיות </b></td>
+              <td></td>
+              <td>
+                <input matInput type="number" inputmode="numeric" min="0" class="w-50" [(ngModel)]="smallbag"
+                  placeholder="כמות">
+              </td>
+              <td><button mat-fab color="success" (click)="incAmount('smallbag');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">+</button></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><button mat-fab color="fail" (click)="decAmount('smallbag');"
+                  style="min-width:20px;max-width:50px;text-align:match-parent;width:50px;">-</button></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td> <b> ביגבגים </b></td>
+              <td></td>
+              <td>
+                <input matInput type="number" inputmode="numeric" min="0" class="w-50" [(ngModel)]="bigbag"
+                  placeholder="כמות">
+              </td>
+              <td><button mat-fab color="success" (click)="incAmount('bigbag');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">+</button></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><button mat-fab color="fail" (click)="decAmount('bigbag');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">-</button></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td> <b> ערימות </b></td>
+              <td></td>
+              <td>
+                <input matInput type="number" inputmode="numeric" min="0" class="w-50" [(ngModel)]="pile"
+                  placeholder="כמות">
+              </td>
+              <td><button mat-fab color="success" (click)="incAmount('pile');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">+</button></td>
+              <td>&nbsp;&nbsp;</td>
+              <td><button mat-fab color="fail" (click)="decAmount('pile');"
+                  style="min-width:50px;max-width:50px;text-align:match-parent;width:50px;">-</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+
+
+        <button [disabled]="btnClicked" class="large" mat-raised-button color="primary" style="font-size:xx-large;"
+          type="submit" (click)="PickupOrder();">אסוף כביסה</button>
+      </div>
+
+      <br />
+      <br />
+      <br />
+    </mat-card-content>
+  </mat-card>
+</div>

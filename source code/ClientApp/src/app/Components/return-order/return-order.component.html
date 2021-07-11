@@ -1,0 +1,75 @@
+<div class="container">
+  <app-nav-menu></app-nav-menu>
+  <mat-card id="card" style="text-align: center;">
+    <mat-card-title>
+      <h1> יציאה לקו</h1>
+      <h2> בחר מקומות לאיסוף/החזרה </h2>
+    </mat-card-title>
+    <mat-card-content>
+      <div *ngIf="!loaded">
+        <h1 style="text-align:center">טוען...</h1>
+      </div>
+      <div align="center" *ngIf="loaded && clients.length > 0" dir="rtl">
+        <hr />
+        <h3>ראש פינה</h3>
+        <span dir=rtl *ngFor="let client of rosh_pina;let i = index;">
+          <button mat-raised-button color="warn" style="font-size:x-large;font-weight:600;"
+            *ngIf="client.City=='ראש פינה'" id={{client.clientId}} (click)="selectName(client)">{{client.Name}}</button>
+          &nbsp; <br *ngIf="(i + 1) % 2 == 0" />
+          <br *ngIf="(i + 1) % 2 == 0" />
+        </span>
+
+        <hr />
+        <h3>טבריה ולבנים</h3>
+        <span dir=rtl *ngFor="let client of tebrias_levnim;let i = index;">
+          <button mat-raised-button color="warn" style="font-size:x-large;font-weight:600;"
+            *ngIf="client.City=='טבריה' || client.City=='לבנים'" id={{client.clientId}}
+            (click)="selectName(client)">{{client.Name}}</button>
+          &nbsp; <br *ngIf="(i + 1) % 2 == 0" />
+          <br *ngIf="(i + 1) % 2 == 0" />
+        </span>
+        <hr />
+        <h3>חדנס וגמלא</h3>
+        <span dir=rtl *ngFor="let client of hadnes_gamla;let i = index;">
+          <button mat-raised-button color="warn" style="font-size:x-large;font-weight:600;"
+            *ngIf="client.City=='חדנס' || client.City=='גמלא'" id={{client.clientId}}
+            (click)="selectName(client)">{{client.Name}}</button>
+          &nbsp; <br *ngIf="(i + 1) % 2 == 0" />
+          <br *ngIf="(i + 1) % 2 == 0" />
+        </span>
+        <hr />
+        <h3>כנרת ופוריה</h3>
+        <span dir=rtl *ngFor="let client of kinneret_puria;let i = index;">
+          <button mat-raised-button color="warn" style="font-size:x-large;font-weight:600;"
+            *ngIf="client.City=='כנרת' || client.City=='פוריה'" id={{client.clientId}}
+            (click)="selectName(client)">{{client.Name}}</button>
+          &nbsp; <br *ngIf="(i + 1) % 2 == 0" />
+          <br *ngIf="(i + 1) % 2 == 0" />
+        </span>
+        <hr />
+        <h3>מצפה נטופה וטורעאן</h3>
+        <span dir=rtl *ngFor="let client of netofa_toran;let i = index;">
+          <button mat-raised-button color="warn" style="font-size:x-large;font-weight:600;"
+            *ngIf="client.City=='מצפה נטופה' || client.City=='טורעאן'" id={{client.clientId}}
+            (click)="selectName(client)">{{client.Name}}</button>
+          &nbsp; <br *ngIf="(i + 1) % 2 == 0" />
+          <br *ngIf="(i + 1) % 2 == 0" />
+        </span>
+        <hr />
+        <h3>אחר</h3>
+        <span dir=rtl *ngFor="let client of other;let i = index;">
+          <button mat-raised-button color="warn" style="font-size:x-large;font-weight:600;"
+            *ngIf="client.City!='ראש פינה' && client.City!='טבריה' && client.City!='חדנס' && client.City!='גמלא' && client.City!='כנרת' && client.City!='פוריה' && client.City!='מצפה נטופה' && client.City!='טורעאן' && client.City!='לבנים'"
+            id={{client.clientId}} (click)="selectName(client)">{{client.Name}}</button>
+          &nbsp; <br *ngIf="(i + 1) % 2 == 0" />
+          <br *ngIf="(i + 1) % 2 == 0" />
+        </span>
+        <br />
+        <hr />
+        <button mat-raised-button color="primary" style="font-size:xx-large;" type="submit" (click)="returnOrder();">צא
+          לקו</button>
+        <br />&nbsp;
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
