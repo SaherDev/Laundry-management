@@ -21,7 +21,7 @@
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'aslan','aslan123',''),(2,'ryan','ryan123',NULL),(3,'deen','deen123','2e5a00a8692c851dcdad1193ec51875fc8b96a3ad5890e1cf1be57c9dec0082e5a65d50acd3f29c5ad743169f29a4255');
+INSERT INTO `users` VALUES (1,'as','as123','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
