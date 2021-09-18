@@ -5,7 +5,7 @@
 
 ## Instructions
 ##### 1. Clone ***( using `git clone` )*** or Download the folder ***( using ***`Download ZIP`*** option )*** #####
-##### 2. run the mysql queries (you can find in SQL Tablesl) #####
+##### 2. run the mysql queries (you can find in SQL Tables) #####
 ##### 3. Open your code editor and add the project folder #####
 ##### 4. Fill in the missing details in the ENV file inside backend/config folder #####
 ##### 5. Open the terminal and install all required dependencies with ***`npm i`*** #####
